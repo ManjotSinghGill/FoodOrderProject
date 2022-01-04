@@ -28,7 +28,7 @@
                         <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button"
                             aria-haspopup="true" aria-expanded="false">Pages</a>
                         <div class="dropdown-menu">
-                            <a class="dropdown-item" routerLink="./userprofile" *ngIf="isLoggedIn()">{{tempData.user.name}}</a>
+                            <a class="dropdown-item" routerLink="./userprofile">{{user.name}}</a>
                             <a class="dropdown-item" routerLink="./pricing">Pricing</a>
                             <a class="dropdown-item" routerLink="./contact">Contact</a>
                             <a class="dropdown-item" routerLink="./registration" *ngIf='!isLoggedIn()'>Registration</a>
@@ -38,8 +38,7 @@
                     </li>
 
                     <li class="nav-item" >
-                        <button id="loginBtn"  type="button" class="btn btn-danger"  data-toggle="modal" data-target="#loginModal">Log In</button>
-                        <button id="logoutBtn" routerLink="./home"(click)='logout()' type="button" class="btn btn-danger" style="display: none;">Log Out</button>
+                        <button id="logoutBtn" routerLink="../login" (click)='logout()' type="button" class="btn btn-danger" style="display: inline-block;">Log Out</button>
                     </li>
                 </ul>
             </div>
@@ -47,29 +46,3 @@
     </nav>
     <!-- /.navbar -->
 </header>
-
-
-  <!-- Modal -->
-<div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" #content>
-    <div class="modal-dialog modal-sm" role="document">
-        <div class="modal-content">
-            <div class="modal-body">
-                <h5 class="modal-title" id="loginModalLabel">Log In</h5>
-                <input placeholder="Phone Number" id="mobile" type="text" onkeypress="return (event.charCode !=8 && event.charCode ==0 || (event.charCode >= 48 && event.charCode <= 57))" maxlength="10" />
-                <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#otpModal" data-dismiss="modal" (click)='send_otp()' >Send Otp</button>
-            </div>
-        </div>
-    </div>
-</div>
-
-<div class="modal fade" id="otpModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-sm" role="document">
-        <div class="modal-content">
-            <div class="modal-body">
-                <h5 class="modal-title" id="exampleModalLabel">ENTER OTP</h5>
-                <ngx-otp-input id="otp" [config]="otpInputConfig"></ngx-otp-input>
-                <button type="button" class="btn btn-danger" (click)='login()' (click)="toggleButton()" data-dismiss="modal">SUBMIT</button>
-            </div>
-        </div>
-    </div>
-</div>

@@ -1,3 +1,40 @@
+*{
+    color: white;
+    text-align: center;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+.wrapper{
+    background-image: linear-gradient( rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7) ), url("/assets/images/image01.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 100vh;
+}
+
+.banner{
+    padding: 8rem 10rem;
+}
+
+.banner h1{
+    margin: 1.5rem 3rem;
+    font-size: 5rem;
+}
+
+.banner p{
+    margin: 3rem;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 1.225rem;
+}
+
+.banner button{
+    margin: 0.5rem;
+}
+
+#LoginBtn{
+    font-size: 1.5rem;
+    padding: 0.625rem 1.875rem;
+}
+
 .modal-dialog{
     border: 2px solid white;
     margin-top: 5rem;
@@ -34,13 +71,4 @@
 
 .btn-danger{
     background-color: #FF3300;
-}
-
-.navbar-brand{
-    margin-right: 0;
-    margin-left: auto;
-}
-
-li{
-    cursor: pointer;
 }

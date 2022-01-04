@@ -1,0 +1,33 @@
+<section class="wrapper">
+    <div class="container">
+        <div class="banner d-flex justify-content-center">
+            <h1>Welcome To Foodify</h1>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure blanditiis culpa mollitia praesentium cumque vitae earum nemo corporis explicabo expedita.</p>
+            <button type="button" class="btn btn-danger" id="LoginBtn" data-toggle="modal" data-target="#loginModal">Login</button>
+        </div>
+    </div>
+</section>
+
+<div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" #content>
+  <div class="modal-dialog modal-sm" role="document">
+      <div class="modal-content">
+          <div class="modal-body">
+              <h5 class="modal-title" id="loginModalLabel">Log In</h5>
+              <input placeholder="Phone Number" id="mobile" type="text" onkeypress="return (event.charCode !=8 && event.charCode ==0 || (event.charCode >= 48 && event.charCode <= 57))" maxlength="10" />
+              <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#otpModal" data-dismiss="modal" (click)="send_otp()" >Send Otp</button>
+          </div>
+      </div>
+  </div>
+</div>
+
+<div class="modal fade" id="otpModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-sm" role="document">
+      <div class="modal-content">
+          <div class="modal-body">
+              <h5 class="modal-title" id="exampleModalLabel">ENTER OTP</h5>
+              <input placeholder="OTP" id="otp" type="text" onkeypress="return (event.charCode !=8 && event.charCode ==0 || (event.charCode >= 48 && event.charCode <= 57))" maxlength="6" />
+              <button type="button" class="btn btn-danger" data-dismiss="modal" (click)="login()">SUBMIT</button>
+          </div>
+      </div>
+  </div>
+</div>

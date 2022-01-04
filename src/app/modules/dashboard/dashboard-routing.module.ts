@@ -16,8 +16,8 @@ import { UserprofileComponent } from './userprofile/userprofile.component';
 const routes: Routes = [
   {path: "", component: DashboardCompComponent, 
   children: [
-    {path: "", component: HomeComponent},
-    {path: "home", component: HomeComponent},
+    {path: "", component: HomeComponent, canActivate:[AuthGuard]},
+    {path: "home", component: HomeComponent, canActivate:[AuthGuard]},
     {path: "foodresults", component: FoodresultsComponent, canActivate:[AuthGuard]},
     {path: "mapresults", component: MapresultsComponent, canActivate:[AuthGuard]},
     {path: "restaurants", component: RestaurantsComponent, canActivate:[AuthGuard]},
